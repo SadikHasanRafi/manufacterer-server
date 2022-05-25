@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Shared/Header/Header";
 
 function App() {
   return (
-    <div>
-      <p>mewjhsvdfbcjkushdfbvjdhvfbkjdfvbjdnbffdnjfgbjdfbgjdhmw</p>
+    <div className=" px-8">
+      <Header></Header>
     </div>
   );
 }
