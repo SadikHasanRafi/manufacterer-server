@@ -25,9 +25,11 @@ const Login = () => {
               defaultValue=""
               type="email"
               placeholder="email"
-              {...register("example")}
+              {...register("email", { required: true } ) }
               class="input input-bordered input-accent w-full max-w-xs "
             />
+            {errors.email && <span>This field is required</span>}
+
 
             <label class="label">
               <span class="label-text">Password</span>
@@ -36,22 +38,21 @@ const Login = () => {
               defaultValue=""
               type="password"
               placeholder="password"
-              {...register("exampleRequired", { required: true })}
+              {...register("password", { required: true })}
               class="input input-bordered input-accent w-full max-w-xs"
             />
+            {errors.password && <span>This field is required</span>}
 
             <label class="label">
               <p>
                 New user?
                 <a
-                  href="#"
                   class="label-text-alt link link-hover text-secondary"
                 >
                   Create a new account
                 </a>
               </p>
             </label>
-            {/* {errors.exampleRequired && <span>This field is required</span>} */}
 
             <input type="submit" value="Submit" class="btn" />
           <div class="divider">OR</div>
@@ -59,6 +60,8 @@ const Login = () => {
           </form>
         </div>
       </div>
+
+
     </div>
   );
 };

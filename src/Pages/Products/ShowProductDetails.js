@@ -1,7 +1,13 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import BuyNowModal from "./BuyNowModal";
 
 const ShowProductDetails = () => {
+
+
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
+
   return (
     <div>
       <div class="hero min-h-screen bg-base-200">
@@ -22,10 +28,13 @@ const ShowProductDetails = () => {
             <p>Price per unit: <span>$504</span></p>
 
             <div>
-            <input type="number" defaultValue='30'   class="input mr-5 input-bordered input-accent  w-32  max-w-xs" />
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input type="number" defaultValue='30' {...register("lastName", { min: 20 })}  class="input mr-5 input-bordered input-accent  w-32  max-w-xs" />
+                </form>
+            
               
               <label for="buy-modal"  class="btn btn-primary modal-button w-32 ">Buy now</label>
-                <BuyNowModal></BuyNowModal>
+                
             </div>
           
           </div>

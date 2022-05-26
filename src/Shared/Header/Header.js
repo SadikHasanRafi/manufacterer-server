@@ -1,28 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const menuItem = (
     <>
-      <li>
-        <a>Home</a>
-      </li>
-
-      <li>
-        <a>Dashboard</a>
-      </li>
-
-      <li>
-        <a>Products</a>
-      </li>
-      <li>
-        <a>Review</a>
-      </li>
+      {/* <Link><li>Home</li></Link> */}
+      <Link to='/'><li><a>Home</a></li></Link>
+      <Link to='dashboard'><li><a>Dashboard</a></li></Link>
+      <Link to='product'><li><a>Products</a></li></Link>
+      <Link to="review"><li><a>Review</a></li></Link>
+      <Link to="blog"><li><a>Blog</a></li></Link>
+      <Link to="portfolio"><li><a>Portfolio</a></li></Link>
     </>
   );
 
   return (
-    <div class="navbar bg-base-100 ">
-      <div class="navbar-start">
+    <div class="navbar bg-base-100 justify-center">
+      <div class="justify-start w-6/12">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
             <svg
@@ -55,7 +49,7 @@ const Header = () => {
 
       <div className=" gap-0">
         <div class="navbar-end">
-          <a class="btn">Login</a>
+          <Link to="login"><a class="btn">Login</a></Link>
         </div>
 
         <div class="dropdown">
