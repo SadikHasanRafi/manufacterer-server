@@ -1,7 +1,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import googleSignInSignUp from '../../hooks/googleSignInSignUp';
 
 const SignUp = () => {
+
+//google sign up
+const handleGoogleSignUp = () => {
+  googleSignInSignUp()
+  
+}
+
+
   const {
     register,
     handleSubmit,
@@ -49,7 +58,7 @@ return (
       <div class="divider">OR</div>
 
 {/* google sign up  */}
-        <input type="submit" value="Create account by Google" class="btn" />
+        <input type="submit"  onClick={handleGoogleSignUp}  value="Create account by Google" class="btn" />
 
 
 
