@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const menuItem = (
@@ -41,7 +41,7 @@ const Header = () => {
             {menuItem}
           </ul>
         </div>
-        <a class="btn btn-ghost hidden sm:flex text-xl">Laptop Accessories LTD.</a>
+        <a class="btn btn-ghost hidden lg:flex text-xl">Laptop Accessories LTD.</a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal p-4">{menuItem}</ul>
@@ -54,7 +54,7 @@ const Header = () => {
 
         <div class="dropdown">
           <label tabindex="0" class="m-3" style={{}}>
-            <div class="avatar">
+            <div class="avatar mr-8">
               <div class="w-12 rounded-full border-4">
                 <img src="https://api.lorem.space/image/face?hash=92310" />
               </div>
@@ -69,6 +69,9 @@ const Header = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="navbar-end lg:hidden">
+      <label for="dashboard-sidebar" class="btn btn-primary drawer-button lg:hidden mx-2">Open Dashboard</label>
       </div>
     </div>
   );
