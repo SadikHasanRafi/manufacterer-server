@@ -41,7 +41,7 @@ const Header = () => {
             {menuItem}
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">Laptop Accessories LTD.</a>
+        <a class="btn btn-ghost hidden sm:flex text-xl">Laptop Accessories LTD.</a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal p-4">{menuItem}</ul>

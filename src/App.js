@@ -28,7 +28,7 @@ import FourZeroFour from "./Pages/FourZeroFour/FourZeroFour";
 
 function App() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home/>}></Route>

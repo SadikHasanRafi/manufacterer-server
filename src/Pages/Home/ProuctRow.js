@@ -11,7 +11,7 @@ const ProuctRow = () => {
         </div>
 
 
-      <div className="flex flex-cols justify-center justify-evenly">
+      <div className="flex flex-cols justify-center justify-evenly flex-wrap">
 
 
        <Product></Product>

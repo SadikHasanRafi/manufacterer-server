@@ -10,7 +10,7 @@ const BusinessSummary = () => {
             <p className="text-center p-3 text-5xl uppercase">Grow You business with us</p>
             <p className="text-center text-2xl ">Getting accessories is now easier than ever before</p>
         </div>
-      <div className="grid grid-cols-4 gap-[70px] px-4 py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-[70px] px-4 py-8">
         {/* card 1 */}
         <div class="card w-auto bg-base-100 shadow-xl">
           <div class="card-body items-center text-center">

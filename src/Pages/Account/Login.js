@@ -11,9 +11,10 @@ const Login = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="hero min-h-screen ">
+    <div className="hero h-[80vh] sm:h-[100vh]">
       <div class="card flex-shrink-0 border border-[#9b5de5] w-full max-w-sm bg-base-100">
         <div class="card-body">
+        <h1 className="text-2xl text-center pb-5">Login</h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
             class="form-control w-full max-w-xs"
