@@ -1,7 +1,17 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import auth from "../../firebase.init";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import UserImg from "../UserImg/UserImg";
+import { signOut } from "firebase/auth";
+
+
 
 const Header = () => {
+
+  const [user] = useAuthState(auth);
+  
+
   const menuItem = (
     <>
       {/* <Link><li>Home</li></Link> */}
@@ -49,23 +59,24 @@ const Header = () => {
 
       <div className=" gap-0">
         <div class="navbar-end">
-          <NavLink to="login"><a class="btn">Login</a></NavLink>
+         {
+           !user &&  <NavLink to="login"><a class="btn">Login</a></NavLink>
+         }
         </div>
 
         <div class="dropdown">
-          <label tabindex="0" class="m-3" style={{}}>
-            <div class="avatar mr-8">
-              <div class="w-12 rounded-full border-4">
-                <img src="https://api.lorem.space/image/face?hash=92310" />
-              </div>
-            </div>
-          </label>
+          {
+            user && <UserImg></UserImg>
+          }
+
+
           <ul
             tabindex="0"
-            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+            class="dropdown-content  menu p-2  bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Sign out</a>
+              { user && <button class="btn shadow btn-outline btn-secondary" onClick={()=>signOut(auth)}>Sign Out</button>
+}
             </li>
           </ul>
         </div>

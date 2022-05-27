@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useFirebaseGoogle from '../../Hooks/useFirebaseGoogle';
+import Loading from '../../Shared/Loading';
 
 const SignUp = () => {
 
-  const {googleSignInSignUp,user, loading, error} = useFirebaseGoogle()
+  const {googleSignInSignUp, loading, error} = useFirebaseGoogle()
 
 //google sign up
 const handleGoogleSignUp = () => {
@@ -21,7 +22,11 @@ const handleGoogleSignUp = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
 return (
-  <div className="hero h-[80vh] sm:h-[100vh]">
+
+  <div>
+
+    {loading && <Loading></Loading> }
+    <div className="hero h-[80vh] sm:h-[100vh]">
   <div class="card flex-shrink-0 border border-[#9b5de5] w-full max-w-sm bg-base-100">
     <div class="card-body">
     <h1 className="text-2xl text-center pb-5">Sign Up</h1>
@@ -61,6 +66,7 @@ return (
 
 {/* google sign up  */}
         <input type="submit"  onClick={handleGoogleSignUp}  value="Create account by Google" class="btn" />
+        
 
 
 
@@ -69,6 +75,7 @@ return (
 
 
 </div>
+  </div>
 
     );
 };

@@ -7,7 +7,7 @@ import Loading from "../../Shared/Loading";
 
 
 const Login = () => {
-  const {googleSignInSignUp,user, loading, error} = useFirebaseGoogle()
+  const {googleSignInSignUp, loading, error} = useFirebaseGoogle()
 
 
   // google sign in 
@@ -15,7 +15,7 @@ const Login = () => {
     googleSignInSignUp()
   }
   
-  console.log(user)
+ 
  
 
 

@@ -12,7 +12,7 @@ const useFirebaseGoogle = () => {
     
     
     
-    return {googleSignInSignUp,user, loading, error}
+    return {googleSignInSignUp,loading, error}
 };
 
 export default useFirebaseGoogle;
