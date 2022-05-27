@@ -25,6 +25,7 @@ import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
 import MyOrder from "./Pages/Dashboard/Myorder/MyOrder";
 import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import FourZeroFour from "./Pages/FourZeroFour/FourZeroFour";
+import Loading from "./Shared/Loading";
 
 function App() {
   return (

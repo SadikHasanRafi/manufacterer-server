@@ -1,17 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import googleSignInSignUp from "../../hooks/googleSignInSignUp";
+import auth from "../../firebase.init";
+import useFirebaseGoogle from "../../Hooks/useFirebaseGoogle";
+import Loading from "../../Shared/Loading";
 
 
 const Login = () => {
+  const {googleSignInSignUp,user, loading, error} = useFirebaseGoogle()
 
 
   // google sign in 
   const handleGoogleSignIn = () => {
     googleSignInSignUp()
-    
   }
+  
+  console.log(user)
+ 
 
 
   const {    register,    handleSubmit,    watch,    formState: { errors },  } = useForm();
@@ -21,7 +26,9 @@ const Login = () => {
 
 
   return (
-    <div className="hero h-[80vh] sm:h-[100vh]">
+    <div>
+      {loading && <Loading></Loading> }
+      <div className="hero h-[80vh] sm:h-[100vh]">
       <div class="card flex-shrink-0 border border-[#9b5de5] w-full max-w-sm bg-base-100">
         <div class="card-body">
           <h1 className="text-2xl text-center pb-5">Login</h1>
@@ -96,6 +103,7 @@ const Login = () => {
 
         </div>
       </div>
+    </div>
     </div>
   );
 };

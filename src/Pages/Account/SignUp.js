@@ -1,8 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import googleSignInSignUp from '../../hooks/googleSignInSignUp';
+import useFirebaseGoogle from '../../Hooks/useFirebaseGoogle';
 
 const SignUp = () => {
+
+  const {googleSignInSignUp,user, loading, error} = useFirebaseGoogle()
 
 //google sign up
 const handleGoogleSignUp = () => {
