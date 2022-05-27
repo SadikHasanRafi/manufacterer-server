@@ -1,24 +1,23 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { Line } from 'recharts';
+import "./Dashboard.css"
 
 const Dashboard = () => {
-    const status1 = 'tab-active'
-    const status2 = ''
-    const status3 = ''
-    const status4 = 'tab-active'
-    const status5 = ''
-    const status6 = ''
-    const status7 = ''
+    // const status = []
+    // let i = 
+    // status[i] = 'tab-acttive'
+    // console.log(status)
     return (
         <div>
     <ul class="tabs tabs-boxed menu bg-indigo-200 p-8 overflow-y-auto w-80 bg-base-100 text-base-content rounded-xl h-screen">
-      <li className={`tab ${status1}`}  >My order</li>
-      <li className={`tab ${status2}`}  >Add a review</li>
-      <li className={`tab ${status3}`}  >My profile</li>
-      <li className={`tab ${status4}`}  >Manage all order</li>
-      <li className={`tab ${status5}`}  >Add a product</li>
-      <li className={`tab ${status6}`}  >Make admin</li>
-      <li className={`tab ${status7}`}  >Manage product</li>
-      
+      <NavLink to='addreview'><li><a>Add a review</a></li></NavLink>
+      <NavLink to='myorder'><li><a>My order</a></li></NavLink>
+      <NavLink to='profile'><li><a>My profile</a></li></NavLink>
+      <NavLink to='manageallorder'><li><a>Manage all order</a></li></NavLink>
+      <NavLink to='addproduct'><li><a>Add a product</a></li></NavLink>
+      <NavLink to='makeadmin'><li><a>Make admin</a></li></NavLink>
+      <NavLink to='manageproduct'><li><a>Manage product</a></li></NavLink>
     </ul>
 </div>
     );

@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  backgroundImage:{ 'cover-pic' :"url('https://api.lorem.space/image/fashion?w=1000&h=800')"},
   theme: {
     extend: {},
   },

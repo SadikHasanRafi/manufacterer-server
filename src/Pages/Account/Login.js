@@ -11,8 +11,8 @@ const Login = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="hero min-h-screen ">
+      <div class="card flex-shrink-0 border border-[#9b5de5] w-full max-w-sm bg-base-100">
         <div class="card-body">
           <form
             onSubmit={handleSubmit(onSubmit)}

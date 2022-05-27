@@ -8,7 +8,7 @@ const Blog = () => {
 <div class=" mockup-code shadow-2xl bg-secondary w-[400px] pb-0">
     <div class="card-body rounded-botom-xl bg-info  break-words ">
         <code className=' text-cyan-100'><span className=' text-lg font-bold'> $ </span>Question Lorem ipsum dolor sit amet.</code>
-        <code className='text-green-400'><span className=' text-lg font-bold'> > </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
+        <code className='text-green-400'><span className=' text-lg font-bold'> </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
        
     </div>
 </div>
@@ -16,7 +16,7 @@ const Blog = () => {
 <div class=" mockup-code shadow-2xl bg-secondary w-[400px] pb-0">
     <div class="card-body rounded-botom-xl bg-info  break-words ">
         <code className=' text-cyan-100'><span className=' text-lg font-bold'> $ </span>Question Lorem ipsum dolor sit amet.</code>
-        <code className='text-green-400'><span className=' text-lg font-bold'> > </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
+        <code className='text-green-400'><span className=' text-lg font-bold'></span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
        
     </div>
 </div>
@@ -24,7 +24,7 @@ const Blog = () => {
 <div class=" mockup-code shadow-2xl bg-secondary w-[400px] pb-0">
     <div class="card-body rounded-botom-xl bg-info  break-words ">
         <code className=' text-cyan-100'><span className=' text-lg font-bold'> $ </span>Question Lorem ipsum dolor sit amet.</code>
-        <code className='text-green-400'><span className=' text-lg font-bold'> > </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
+        <code className='text-green-400'><span className=' text-lg font-bold'> </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
        
     </div>
 </div>
@@ -32,7 +32,7 @@ const Blog = () => {
 <div class=" mockup-code shadow-2xl bg-secondary w-[400px] pb-0">
     <div class="card-body rounded-botom-xl bg-info  break-words ">
         <code className=' text-cyan-100'><span className=' text-lg font-bold'> $ </span>Question Lorem ipsum dolor sit amet.</code>
-        <code className='text-green-400'><span className=' text-lg font-bold'> > </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
+        <code className='text-green-400'><span className=' text-lg font-bold'> </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
        
     </div>
 </div>
@@ -40,7 +40,7 @@ const Blog = () => {
 <div class=" mockup-code shadow-2xl bg-secondary w-[400px] pb-0">
     <div class="card-body rounded-botom-xl bg-info  break-words ">
         <code className=' text-cyan-100'><span className=' text-lg font-bold'> $ </span>Question Lorem ipsum dolor sit amet.</code>
-        <code className='text-green-400'><span className=' text-lg font-bold'> > </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
+        <code className='text-green-400'><span className=' text-lg font-bold'> </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
        
     </div>
 </div>
@@ -48,7 +48,7 @@ const Blog = () => {
 <div class=" mockup-code shadow-2xl bg-secondary w-[400px] pb-0">
     <div class="card-body rounded-botom-xl bg-info  break-words ">
         <code className=' text-cyan-100'><span className=' text-lg font-bold'> $ </span>Question Lorem ipsum dolor sit amet.</code>
-        <code className='text-green-400'><span className=' text-lg font-bold'> > </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
+        <code className='text-green-400'><span className=' text-lg font-bold'> </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
        
     </div>
 </div>
@@ -56,7 +56,7 @@ const Blog = () => {
 <div class=" mockup-code shadow-2xl bg-secondary w-[400px] pb-0">
     <div class="card-body rounded-botom-xl bg-info  break-words ">
         <code className=' text-cyan-100'><span className=' text-lg font-bold'> $ </span>Question Lorem ipsum dolor sit amet.</code>
-        <code className='text-green-400'><span className=' text-lg font-bold'> > </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
+        <code className='text-green-400'><span className=' text-lg font-bold'> </span>Answer Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt in animi sapiente harum dolore, officia delectus natus ducimus architecto cum at incidunt commodi illum omnis dolorem deleniti alias, eum reiciendis nostrum? Earum quis, blanditiis sit quaerat sint accusamus consequuntur facilis.</code>
        
     </div>
 </div>
