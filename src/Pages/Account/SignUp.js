@@ -1,15 +1,24 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useFirebaseGoogle from '../../Hooks/useFirebaseGoogle';
+import useMailPassword from '../../Hooks/useMailPassword';
 import Loading from '../../Shared/Loading';
 
 const SignUp = () => {
-
+  
   const {googleSignInSignUp, loading, error} = useFirebaseGoogle()
+  const { mailPasswordSignUp } = useMailPassword()
 
 //google sign up
 const handleGoogleSignUp = () => {
+  
   googleSignInSignUp()
+}
+
+
+
+//mail password login
+const handleMailPasswordSignUp = () =>{
   
 }
 
@@ -20,7 +29,7 @@ const handleGoogleSignUp = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => mailPasswordSignUp(data.email,data.password);
 return (
 
   <div>
@@ -60,7 +69,7 @@ return (
         {errors.password && <span>This field is required</span>}
 
 
-        <input type="submit" value="Submit" class="btn" />
+        <input type="submit" value="Register" class="btn" />
         </form>
       <div class="divider">OR</div>
 

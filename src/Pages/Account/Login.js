@@ -3,11 +3,14 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import useFirebaseGoogle from "../../Hooks/useFirebaseGoogle";
+import useMailPassword from "../../Hooks/useMailPassword";
 import Loading from "../../Shared/Loading";
 
 
 const Login = () => {
   const {googleSignInSignUp, loading, error} = useFirebaseGoogle()
+  const { mailPasswordSignIn } = useMailPassword()
+
 
 
   // google sign in 
@@ -21,7 +24,7 @@ const Login = () => {
 
   const {    register,    handleSubmit,    watch,    formState: { errors },  } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => mailPasswordSignIn(data.email,data.password);
 
 
 
@@ -51,11 +54,7 @@ const Login = () => {
               class="input input-bordered input-accent w-full max-w-xs "
             />
             {errors.email && <span>This field is required</span>}
-            {/* ________________________________ */}
-
-
-
-            {/* password input */}
+ 
             <label class="label">
               <span class="label-text">Password</span>
             </label>
@@ -67,8 +66,8 @@ const Login = () => {
               class="input input-bordered input-accent w-full max-w-xs"
             />
             {errors.password && <span>This field is required</span>}
-            {/* ________________________________ */}
-
+   
+   
 
 
             <label class="label">
@@ -84,7 +83,7 @@ const Login = () => {
             </label>
 
           {/* submit button */}
-            <input type="submit" value="Submit" class="btn" />
+            <input type="submit" value="Submit" class="btn  " />
           </form>
           {/* ________________________________ */}
           
