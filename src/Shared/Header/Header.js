@@ -73,6 +73,7 @@ const Header = () => {
       <div className="navbar-end lg:hidden">
       <label for="dashboard-sidebar" class="btn btn-primary drawer-button lg:hidden mx-2">Open Dashboard</label>
       </div>
+     
     </div>
   );
 };

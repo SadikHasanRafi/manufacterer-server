@@ -34,16 +34,17 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="product" element={<ProuctRow/>}></Route>
         <Route path="dashboard" element={<Dashboard/>}>
-          <Route path="dashboard/addreview" element={<AddReview></AddReview>}></Route>
-          <Route path="dashboard/myorder" element={<MyOrder></MyOrder>}></Route>
+          <Route path="addreview" element={<AddReview></AddReview>}></Route>
+          <Route path="myorder" element={<MyOrder></MyOrder>}></Route>
           <Route index element={<MyProfile></MyProfile>}></Route>
-          <Route path="dashboard/manageallorder" element={<ManageAllOrder></ManageAllOrder>}></Route>
-          <Route path="dashboard/addproduct" element={<AddProduct></AddProduct>}></Route>
-          <Route path="dashboard/makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
-          <Route path="dashboard/manageproduct" element={<ManageProduct></ManageProduct>}></Route>
+          <Route path="manageallorder" element={<ManageAllOrder></ManageAllOrder>}></Route>
+          <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
+          <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path="manageproduct" element={<ManageProduct></ManageProduct>}></Route>
         </Route>
         <Route path="review" element={<Review/>}></Route>
-        <Route path="login" element={<Login/>}></Route>
+        <Route path="login" element={<Login></Login>}></Route>
+        <Route path="signup" element={<SignUp></SignUp>}></Route>  
         <Route path="blog" element={<Blog></Blog>}></Route>
         <Route path="portfolio" element={<Portfolio></Portfolio>}></Route>
         <Route path="*" element={<FourZeroFour></FourZeroFour>}></Route>

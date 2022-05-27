@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+
 
 const Login = () => {
   const {
@@ -47,18 +49,20 @@ const Login = () => {
             <label class="label">
               <p>
                 New user?
-                <a
-                  class="label-text-alt link link-hover text-secondary"
-                >
-                  Create a new account
-                </a>
+                <Link to='/signup' class="label-text-alt link link-hover text-secondary">Create a new account</Link>
               </p>
             </label>
 
             <input type="submit" value="Submit" class="btn" />
+            </form>
           <div class="divider">OR</div>
+
+
+    {/* google sign in  */}
             <input type="submit" value="Sign in with google" class="btn" />
-          </form>
+
+
+
         </div>
       </div>
 
