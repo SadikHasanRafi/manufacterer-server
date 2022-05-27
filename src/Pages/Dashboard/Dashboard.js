@@ -10,7 +10,7 @@ const Dashboard = () => {
     // console.log(status)
     return (
         <div className='flex'>
-    <ul class="tabs tabs-boxed menu bg-indigo-200 p-8 overflow-y-auto w-80 bg-base-100 text-base-content rounded-xl h-screen">
+    <ul class="tabs tabs-boxed menu bg-indigo-200 p-8 overflow-y-auto w-80 bg-base-100 text-base-content rounded-xl h-[80vh]">
       <NavLink to='dashboard/addreview'><li><a>Add a review</a></li></NavLink>
       <NavLink to='dashboard/myorder'><li><a>My order</a></li></NavLink>
       <NavLink to='/dashboard'><li><a>My profile</a></li></NavLink>
