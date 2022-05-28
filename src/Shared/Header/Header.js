@@ -10,13 +10,17 @@ import { signOut } from "firebase/auth";
 const Header = () => {
 
   const [user] = useAuthState(auth);
+
+  
   
 
   const menuItem = (
     <>
       {/* <Link><li>Home</li></Link> */}
       <NavLink to='/'><li><a>Home</a></li></NavLink>
-      <NavLink to='dashboard'><li><a>Dashboard</a></li></NavLink>
+      {
+           user && <NavLink to='dashboard'><li><a>Dashboard</a></li></NavLink>
+      }
       <NavLink to='product'><li><a>Products</a></li></NavLink>
       <NavLink to="review"><li><a>Review</a></li></NavLink>
       <NavLink to="blog"><li><a>Blog</a></li></NavLink>
@@ -28,7 +32,7 @@ const Header = () => {
     <div class="navbar bg-base-100 justify-center">
       <div class="justify-start w-6/12">
         <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
+          <label tabIndex="0" class="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -37,7 +41,7 @@ const Header = () => {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
+                strokeLinecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M4 6h16M4 12h8m-8 6h16"
@@ -45,7 +49,7 @@ const Header = () => {
             </svg>
           </label>
           <ul
-            tabindex="0"
+            tabIndex="0"
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {menuItem}
@@ -64,25 +68,24 @@ const Header = () => {
          }
         </div>
 
-        <div class="dropdown">
+        <div class="dropdown  dropdown-end">
           {
             user && <UserImg></UserImg>
           }
 
 
           <ul
-            tabindex="0"
+            tabIndex="0"
             class="dropdown-content  menu p-2  bg-base-100 rounded-box w-52"
           >
             <li>
-              { user && <button class="btn shadow btn-outline btn-secondary" onClick={()=>signOut(auth)}>Sign Out</button>
-}
+              { user && <button class="btn shadow btn-outline btn-secondary" onClick={()=>signOut(auth)}>Sign Out</button>}
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-end lg:hidden">
-      <label for="dashboard-sidebar" class="btn btn-primary drawer-button lg:hidden mx-2">Open Dashboard</label>
+      <label htmlFor="dashboard-sidebar" class="btn btn-primary drawer-button lg:hidden mx-2">Open Dashboard</label>
       </div>
      
     </div>

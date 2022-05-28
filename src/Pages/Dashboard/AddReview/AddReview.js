@@ -16,13 +16,13 @@ const AddReview = () => {
     await axios.post("http://localhost:8000/addreview", data).then((res) => {
       console.log(res?.data.success);
       if (res?.data.success === true) {
-        toast.success("Review Successfully added.");
+        toast.success("Review successfully added.");
       }
     });
   };
 
   return (
-    <div className="flex flex-1 justify-center items-center">
+    <div className="flex flex-1 justify-center h-screen items-center">
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
         <textarea
           rows="10"

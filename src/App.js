@@ -26,6 +26,7 @@ import MyOrder from "./Pages/Dashboard/Myorder/MyOrder";
 import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import FourZeroFour from "./Pages/FourZeroFour/FourZeroFour";
 import Loading from "./Shared/Loading";
+import Reviews from "./Pages/Home/Reviews";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
           <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path="manageproduct" element={<ManageProduct></ManageProduct>}></Route>
         </Route>
-        <Route path="review" element={<Review/>}></Route>
+        <Route path="review" element={<Reviews/>}></Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<SignUp></SignUp>}></Route>  
         <Route path="blog" element={<Blog></Blog>}></Route>

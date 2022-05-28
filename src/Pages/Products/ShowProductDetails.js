@@ -33,7 +33,7 @@ const ShowProductDetails = () => {
                 </form>
             
               
-              <label for="buy-modal"  class="btn btn-primary modal-button w-32 ">Buy now</label>
+              <label htmlFor="buy-modal"  class="btn btn-primary modal-button w-32 ">Buy now</label>
                 
             </div>
           

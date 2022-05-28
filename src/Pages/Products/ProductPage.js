@@ -1,12 +1,12 @@
 import React from "react";
-import Product from "../../Shared/Product/Product";
+import useProducts from "../../Hooks/useProduct";
+import ProuctRow from "../Home/ProuctRow";
 
 const ProductPage = () => {
+
   return (
     <div>
-      <div className="flex flex-cols-5 justify-center justify-evenly">
-        <Product></Product>
-      </div>
+      <ProuctRow></ProuctRow>
     </div>
   );
 };

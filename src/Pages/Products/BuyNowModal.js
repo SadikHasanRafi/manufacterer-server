@@ -75,7 +75,7 @@ const BuyNowModal = () => {
             use Wikipedia for free!
           </p>
           <div class="modal-action">
-            <label for="buy-modal" class="btn">
+            <label htmlFor="buy-modal" class="btn">
               Yay!
             </label>
           </div>

@@ -11,11 +11,11 @@ const Dashboard = () => {
   return (
       <div class="drawer drawer-mobile">
       <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col items-center justify-center">
+      <div class="drawer-content">
         <Outlet/>
       </div>
       <div class="drawer-side">
-        <label for="dashboard-sidebar" class="drawer-overlay"></label>
+        <label htmlFor="dashboard-sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
           <NavLink to='addreview'><li><a>Add a review</a></li></NavLink>

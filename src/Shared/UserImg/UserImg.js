@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 const UserImg = () => {
     const [user] = useAuthState(auth);
     return (
-        <div> <label tabindex="0" class="m-3" style={{}}>
+        <div> <label tabIndex="0" class="m-3" style={{}}>
             <div class="avatar mr-8">
               <div class="w-12 rounded-full border-4">
                 <img srcSet={user.photoURL} />

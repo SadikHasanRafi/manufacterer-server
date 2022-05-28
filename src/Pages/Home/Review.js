@@ -1,39 +1,20 @@
 import React from "react";
 
-const Review = () => {
+const Review = (props) => {
+  const {review:userREview} = props
+  const {_id , rating , review } = userREview
+  console.log(review)
   return (
     <div>
-
-        <div>
-            <p className=" underline pb-36 uppercase text-center text-5xl ">Our Customer review</p>
-                      
-        </div>
-
-    <div className="flex flex-cols justify-center justify-evenly pb-24 mb-10 flex-wrap">
-    <div class="card w-96 bg-primary text-primary-content mb-6">
-        <div class="card-body">
-          <h2 class="card-title">Name</h2>
-          <p>"If a dog chews shoes whose shoes does he choose?"</p>
+      <div className="flex justify-center pb-24 mb-10 flex-wrap">
+        <div class="card w-[100vw] sm:w-[30vw] lg:w-[50vw] bg-primary text-primary-content mb-6">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous{_id}</h2>
+            <p>"{review}"</p>
+            <p>{rating}</p>
+          </div>
         </div>
       </div>
-
-      <div class="card w-96 bg-primary text-primary-content mb-6">
-        <div class="card-body">
-          <h2 class="card-title">Name</h2>
-          <p>"If a dog chews shoes whose shoes does he choose?"</p>
-        </div>
-      </div>
-
-      <div class="card w-96 bg-primary text-primary-content mb-6">
-        <div class="card-body">
-          <h2 class="card-title">Name</h2>
-          <p>"If a dog chews shoes whose shoes does he choose?"</p>
-        </div>
-      </div>
-
-    </div>
-
-
     </div>
   );
 };
