@@ -9,6 +9,10 @@ const ShowProductDetails = () => {
   const id = useParams()
 
   const [singleProduct, setSingleProduct] = useState(null)
+
+  const [orderAmount, setOrderAmount] = useState(null)
+
+
   useEffect(()=>{
     axios.get(`http://localhost:8000/showproductdetails/${id._id}`)
     .then(res => setSingleProduct(res.data))
@@ -17,7 +21,8 @@ const ShowProductDetails = () => {
 
   const {  register,handleSubmit, watch ,formState: { errors }} = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    console.log(data,singleProduct);
+    setOrderAmount(data,singleProduct)
   };
     const {amount,description,name,pic,price} = singleProduct || {}
   return (
@@ -48,11 +53,11 @@ const ShowProductDetails = () => {
      
               {errors.amount && <p className=" text-red-500">Order minimum 20</p>}
 
-             <input type="submit" class="btn btn-primary modal-button w-32 " htmlFor="buy-modal"/>
+             <input type="submit" class="btn btn-primary modal-button w-32 "  for="my-modal-3"/>
            </form>
             
               
-             
+             { orderAmount && <BuyNowModal singleProduct={singleProduct} orderAmount={orderAmount} ></BuyNowModal>}
                 
             </div>
           
