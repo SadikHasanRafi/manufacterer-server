@@ -12,19 +12,18 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const AddReview = () => {
   
-  const [review,setReview] = useState()
+  const [review,setReview] = useState("")
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     setReview(data)
     toast.success('Review Successfully added.')
+    
   }
 
   useEffect(() => {
     axios.post('http://localhost:8000/addreview',review)
     .then(res => console.log(res?.data.success))
-
-    setReview("")
-  }, [review])
+  }, [onSubmit])
 
 
   
