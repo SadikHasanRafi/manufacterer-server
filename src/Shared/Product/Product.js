@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = (product) => {
   console.log('products',product.product)
   const {_id,amount,description,name,pic,price} = product.product
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
+          <Link to={`/product/${_id}`}>
+            <div class="card w-96 bg-base-100 shadow-md hover:shadow-2xl">
           <figure>
             <img
               srcSet={pic}
@@ -20,6 +22,7 @@ const Product = (product) => {
             </div>
           </div>
         </div>
+        </Link>
         </div>
     );
 };
