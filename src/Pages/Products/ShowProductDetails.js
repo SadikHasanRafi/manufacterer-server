@@ -23,7 +23,6 @@ const ShowProductDetails = () => {
 
   const {  register,handleSubmit, watch ,formState: { errors }} = useForm();
   const onSubmit = (data) => {
-    console.log(data,singleProduct);
     setOrderAmount(data,singleProduct)
   };
     const {amount,description,name,pic,price} = singleProduct || {}
