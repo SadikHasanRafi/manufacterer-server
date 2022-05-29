@@ -11,7 +11,6 @@ const useProducts = () => {
         axios.get("http://localhost:8000/showproducts")
         .then(res => {
             setProducts(res.data)
-            console.log(res.data)
         })
        
         // products = products.data

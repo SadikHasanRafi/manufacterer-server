@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -9,13 +10,13 @@ import Loading from "../../Shared/Loading";
 
 const Login = () => {
   const {googleSignInSignUp, loading, error} = useFirebaseGoogle()
-  const { mailPasswordSignIn } = useMailPassword()
-
+  const { mailPasswordSignIn,newUserLoading,loading:previousUserLoading } = useMailPassword()
 
 
   // google sign in 
   const handleGoogleSignIn = () => {
     googleSignInSignUp()
+   
   }
   
  
@@ -30,7 +31,7 @@ const Login = () => {
 
   return (
     <div>
-      {loading && <Loading></Loading> }
+    { (loading || newUserLoading || previousUserLoading) && <Loading></Loading> }
       <div className="hero h-[80vh] sm:h-[100vh]">
       <div class="card flex-shrink-0 border border-[#9b5de5] w-full max-w-sm bg-base-100">
         <div class="card-body">

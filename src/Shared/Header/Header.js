@@ -4,6 +4,7 @@ import auth from "../../firebase.init";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import UserImg from "../UserImg/UserImg";
 import { signOut } from "firebase/auth";
+import AddUserInfo from "../../Components/AddUserInfo";
 
 
 
@@ -11,7 +12,7 @@ const Header = () => {
 
   const [user] = useAuthState(auth);
 
-  
+
   
 
   const menuItem = (
@@ -87,6 +88,7 @@ const Header = () => {
       <div className="navbar-end lg:hidden">
       <label htmlFor="dashboard-sidebar" class="btn btn-primary drawer-button lg:hidden mx-2">Open Dashboard</label>
       </div>
+       <AddUserInfo></AddUserInfo> 
      
     </div>
   );

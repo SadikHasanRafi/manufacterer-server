@@ -3,7 +3,6 @@ import React from "react";
 const Review = (props) => {
   const {review:userREview} = props
   const {_id , rating , review } = userREview
-  console.log(review)
   return (
     <div>
       <div className="flex justify-center pb-24 mb-10 flex-wrap">

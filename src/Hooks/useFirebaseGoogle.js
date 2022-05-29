@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import auth from '../firebase.init';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import AddUserInfo from '../Components/AddUserInfo';
 
 const useFirebaseGoogle = () => {
-     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+   const [signInWithGoogle,u, loading, error] = useSignInWithGoogle(auth);
 
    const [userData, setUserData ] = useState(null)
+
+
+
+  
 
    // if (user) {
    //    const data = {
@@ -19,6 +24,7 @@ const useFirebaseGoogle = () => {
 
 
     const googleSignInSignUp = () => {
+ 
        signInWithGoogle()
     }
     

@@ -9,7 +9,7 @@ const useReviews = () => {
         axios.get("http://localhost:8000/showreviews")
         .then(res => {
             setReviews(res.data)
-            console.log(typeof(res.data))
+            
             
         })
        
