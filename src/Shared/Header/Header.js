@@ -5,12 +5,19 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import UserImg from "../UserImg/UserImg";
 import { signOut } from "firebase/auth";
 import AddUserInfo from "../../Components/AddUserInfo";
+import toast, { Toaster } from "react-hot-toast";
 
 
 
 const Header = () => {
 
   const [user] = useAuthState(auth);
+
+
+  const handleSignOut = () => {
+    signOut(auth)
+    toast.success("Successfully signed out.");
+  }
 
 
   
@@ -80,7 +87,7 @@ const Header = () => {
             class="dropdown-content  menu p-2  bg-base-100 rounded-box w-52"
           >
             <li>
-              { user && <button class="btn shadow btn-outline btn-secondary" onClick={()=>signOut(auth)}>Sign Out</button>}
+              { user && <button class="btn shadow btn-outline btn-secondary" onClick={handleSignOut}>Sign Out</button>}
             </li>
           </ul>
         </div>
@@ -88,6 +95,7 @@ const Header = () => {
       <div className="navbar-end lg:hidden">
       <label htmlFor="dashboard-sidebar" class="btn btn-primary drawer-button lg:hidden mx-2">Open Dashboard</label>
       </div>
+      <Toaster />
        <AddUserInfo></AddUserInfo> 
      
     </div>

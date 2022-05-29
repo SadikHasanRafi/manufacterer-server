@@ -31,17 +31,18 @@ const AddUserInfo =  () => {
             }
 
             
-            axios.get(`http://localhost:8000/showusers/${user.uid}`)
-            .then( res => console.log(res.data) )
+            axios.put(`http://localhost:8000/addoneuser`,newUser)
+            .then( res =>{ 
+               console.log(res.data) 
+               toast.success("Successfully signed in."); 
+            })
                
             
             
-            axios.post("http://localhost:8000/adduser",newUser).then( res => {
-                toast.success("Successfully signed in.");
-            })
+            
          }
          else{
-            toast.success("Successfully signed out.");
+           
 
          }
     }, [user])
@@ -50,7 +51,6 @@ const AddUserInfo =  () => {
 
 
     
-    console.log("user - ", user)
 
    
 
