@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import BuyNowModal from "./BuyNowModal";
 import axios from 'axios'
 import { data } from "autoprefixer";
@@ -11,6 +11,8 @@ const ShowProductDetails = () => {
   const [singleProduct, setSingleProduct] = useState(null)
 
   const [orderAmount, setOrderAmount] = useState(null)
+
+
 
 
   useEffect(()=>{
@@ -53,9 +55,12 @@ const ShowProductDetails = () => {
      
               {errors.amount && <p className=" text-red-500">Order minimum 20</p>}
 
-             <input type="submit" class="btn btn-primary modal-button w-32 "  for="my-modal-3"/>
+                             <input type="submit" class="btn btn-primary modal-button w-32 "  for="buy-modal"/>
+
+              
            </form>
             
+
               
              { orderAmount && <BuyNowModal singleProduct={singleProduct} orderAmount={orderAmount} ></BuyNowModal>}
                 
