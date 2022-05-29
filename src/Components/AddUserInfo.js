@@ -9,7 +9,7 @@ import auth from '../firebase.init';
 const AddUserInfo =  () => {
     const [user] = useAuthState(auth)
 
-    useEffect(  () => {
+    useEffect( () => {
          if (user!=null) {
             
 
@@ -30,7 +30,11 @@ const AddUserInfo =  () => {
                nationality:''
             }
 
-
+            
+            axios.get(`http://localhost:8000/showusers/${user.uid}`)
+            .then( res => console.log(res.data) )
+               
+            
             
             axios.post("http://localhost:8000/adduser",newUser).then( res => {
                 toast.success("Successfully signed in.");
