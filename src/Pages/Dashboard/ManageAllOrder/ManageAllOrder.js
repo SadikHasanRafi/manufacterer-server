@@ -1,41 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+
 
 const ManageAllOrder = () => {
-  return (
-    <div class="overflow-x-auto">
-      <table class="table-normal w-full">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
-            <td>Blue</td>
-          </tr>
 
-          <tr>
-            <th>2</th>
-            <td>Hart Hagerty</td>
-            <td>Desktop Support Technician</td>
-            <td>Purple</td>
-          </tr>
-          <tr>
-            <th>3</th>
-            <td>Brice Swyre</td>
-            <td>Tax Accountant</td>
-            <td>Red</td>
-          </tr>
-        </tbody>
-      </table>
+  const [tableDatas, setTableDatas] = useState([])
+  useEffect(() => {
+    axios.get("http://localhost:8000/showorders")
+    .then( res => setTableDatas(res.data) )
+  }, [])
+
+
+
+
+  return (
+    <div>
+        <div class="overflow-x-auto">
+  <table class="table w-full ">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Buyer Name</th>
+        <th>product Name</th>
+        <th>Buyer Email</th>
+        <th>Buyer address</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+
+    {
+      tableDatas.map((tableData,i) => 
+      <>
+      { i%2==0 ?
+      <tbody>
+      <tr >
+        <th>{tableData._id}</th>
+        <td>{tableData.buyerName}</td>
+        <td>{tableData.productName}</td>
+        <td>{tableData.email}</td>
+        <td>{tableData.address}</td>
+        <td>{tableData.status}</td>
+      </tr>
+    </tbody> :
+     <tbody>
+     <tr class="hover:bg-slate-200">
+       <th>{tableData._id}</th>
+       <td>{tableData.buyerName}</td>
+       <td>{tableData.productName}</td>
+       <td>{tableData.email}</td>
+       <td>{tableData.address}</td>
+       <td>{tableData.status}</td>
+     </tr>
+   </tbody> 
+    } 
+      </> )
+    }
+    
+    
+  </table>
+
+
+</div>
     </div>
-  );
+);
 };
 
 export default ManageAllOrder;

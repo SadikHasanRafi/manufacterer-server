@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 const MyOrder = () => {
     return (
 <div class="overflow-x-auto">
-  <table class="table-normal w-full">
+  <table class="table w-full">
     <thead>
       <tr>
         <th></th>
