@@ -27,6 +27,7 @@ import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import FourZeroFour from "./Pages/FourZeroFour/FourZeroFour";
 import Loading from "./Shared/Loading";
 import Reviews from "./Pages/Home/Reviews";
+import PrivateRoute from "./Components/PrivateRoute";
 
 function App() {
   return (
@@ -35,14 +36,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="product" element={<ProuctRow/>}></Route>
-        <Route path="dashboard" element={<Dashboard/>}>
-          <Route path="addreview" element={<AddReview></AddReview>}></Route>
-          <Route path="myorder" element={<MyOrder></MyOrder>}></Route>
+        <Route path="dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>}>
+         
+            <Route path="addreview" element={<AddReview></AddReview>}></Route>
+            <Route path="myorder" element={<MyOrder></MyOrder>}></Route>
+       
           <Route index element={<MyProfile></MyProfile>}></Route>
+
           <Route path="manageallorder" element={<ManageAllOrder></ManageAllOrder>}></Route>
           <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
           <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path="manageproduct" element={<ManageProduct></ManageProduct>}></Route>
+
         </Route>
 
         <Route path="product/:_id" element={<ShowProductDetails></ShowProductDetails>}></Route>
