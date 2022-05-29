@@ -7,26 +7,23 @@ import swal from 'sweetalert';
 const ManageProduct = () => {
   const [deleteProduct,setDeleteProduct] = useState(null)
 
-  
+  const showProducts =async () => {
+    await axios.get("http://localhost:8000/showproducts")
+    .then( res => setTableDatas(res.data) )
+    }
 
   const [tableDatas, setTableDatas] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:8000/showproducts")
-    .then( res => setTableDatas(res.data) )
+    showProducts()
   }, [])
 
 
   useEffect(()=>{
-    console.log("deleting")
-    const data = { _id : deleteProduct }
-    axios.delete("http://localhost:8000/deleteproduct",data)
-    .then(res => {
-      console.log(res)
-    })
+    console.log('kam kaj nai')
   },[deleteProduct])
 
 
-  const handleDelete =(i)=> {
+  const  handleDelete = (i)=> {
     console.log(i)
     swal({
       title: "Are you sure?",
@@ -35,12 +32,19 @@ const ManageProduct = () => {
       buttons: true,
       dangerMode: true,
     })
-    .then((willDelete) => {
+    .then(async (willDelete) => {
       if (willDelete) {
         swal("Product has been deleted!", {
           icon: "success",
         });
         setDeleteProduct(i)
+        console.log("deleting")
+    const data = { _id : deleteProduct }
+    await axios.post("http://localhost:8000/deleteproduct",data)
+    .then(res => {
+      console.log(res)
+      showProducts()
+    })
       } else {
         swal("Your imaginary file is safe!");
       }
