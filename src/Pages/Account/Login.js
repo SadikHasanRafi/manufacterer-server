@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import useFirebaseGoogle from "../../Hooks/useFirebaseGoogle";
 import useMailPassword from "../../Hooks/useMailPassword";
@@ -9,15 +9,24 @@ import Loading from "../../Shared/Loading";
 
 
 const Login = () => {
+  let navigate = useNavigate()
   const {googleSignInSignUp, loading, error} = useFirebaseGoogle()
   const { mailPasswordSignIn,newUserLoading,loading:previousUserLoading } = useMailPassword()
+  const [user] = useAuthState(auth)
+  
+
 
 
   // google sign in 
-  const handleGoogleSignIn = () => {
-    googleSignInSignUp()
-   
+  const handleGoogleSignIn = async () => {
+    await  googleSignInSignUp()
+    user && navigate(-1)
   }
+
+  if(user){
+ navigate(-1)
+  }
+
   
  
  

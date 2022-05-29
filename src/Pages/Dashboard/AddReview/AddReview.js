@@ -12,6 +12,7 @@ const AddReview = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     setReview(data);
+    console.log(data)
 
     await axios.post("http://localhost:8000/addreview", data).then((res) => {
       console.log(res?.data.success);

@@ -86,9 +86,8 @@ const Header = () => {
             tabIndex="0"
             class="dropdown-content  menu p-2  bg-base-100 rounded-box w-52"
           >
-            <li>
-              { user && <button class="btn shadow btn-outline btn-secondary" onClick={handleSignOut}>Sign Out</button>}
-            </li>
+            
+            <Link to='/'><li>{ user && <button class="btn shadow btn-outline btn-secondary" onClick={handleSignOut}>Sign Out</button>}</li></Link>
           </ul>
         </div>
       </div>

@@ -41,10 +41,7 @@ const AddUserInfo =  () => {
             
             
          }
-         else{
-           
-
-         }
+         
     }, [user])
     
    
