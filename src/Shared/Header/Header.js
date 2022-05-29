@@ -56,7 +56,7 @@ const Header = () => {
             {menuItem}
           </ul>
         </div>
-        <a class="btn btn-ghost hidden lg:flex text-xl">Laptop Accessories LTD.</a>
+        <Link to='/'><a class=" hover:shadow-sm  hidden lg:flex text-2xl">Laptop Accessories LTD.</a></Link>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal p-4">{menuItem}</ul>
