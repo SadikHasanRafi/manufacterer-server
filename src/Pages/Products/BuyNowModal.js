@@ -17,6 +17,7 @@ const BuyNowModal = (props) => {
 
   const onSubmit = async (data) => {
     const orderData = {
+      
       uid:user.uid,
       productId:_id,
       price:price,
@@ -25,7 +26,8 @@ const BuyNowModal = (props) => {
       address:data.address,
       number:data.number,
       email:user.email,
-      name:user.displayName
+      name:user.displayName,
+      productName:name
     }
     await axios.post(' http://localhost:8000/addorder',orderData)
     .then(res => {
@@ -33,6 +35,7 @@ const BuyNowModal = (props) => {
         toast.success("Soon your order will be delivered.");
       }
       setOrderDetails(false)
+      
     })
     console.log(orderData)
 
@@ -49,7 +52,7 @@ const BuyNowModal = (props) => {
         <div class="modal-box">
           <label
             for="my-modal-6"
-            class="btn btn-sm btn-circle absolute right-2 top-2"
+            class="btn btn-sm btn-circle absolute right-2 top-2 bg-red-200 hover:border-0 hover:bg-red-500"
           >
             ✕
           </label>
@@ -92,11 +95,11 @@ const BuyNowModal = (props) => {
               <input
                 placeholder="Phone number"
                 class="w-[70vw] input input-bordered input-secondary w-full max-w-xs"
-                type="text"
+                type="number"
                 {...register("number", {
                   required: true,
                   maxLength: 11,
-                  pattern: /(^(\+8801|8801|01|008801))[1|3-9]{1}(\d){8}$/,
+                  pattern: /(^(\+8801|8801|01|008801))[1|3-9]{1}(\d){8}$/
                 })}
               />
             </div>

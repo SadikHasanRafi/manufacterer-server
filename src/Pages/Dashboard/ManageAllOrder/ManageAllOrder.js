@@ -4,11 +4,16 @@ import axios from 'axios'
 
 const ManageAllOrder = () => {
 
-  const [tableDatas, setTableDatas] = useState([])
+  const [tableDatas, setTableDatas] = useState([] || {})
   useEffect(() => {
+    
     axios.get("http://localhost:8000/showorders")
     .then( res => setTableDatas(res.data) )
+
+    console.log(tableDatas.number)
   }, [])
+
+
 
 
 
@@ -19,37 +24,52 @@ const ManageAllOrder = () => {
   <table class="table w-full ">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Buyer Name</th>
-        <th>product Name</th>
-        <th>Buyer Email</th>
-        <th>Buyer address</th>
-        <th>Order Status</th>
+        <th>Serial</th>
+        <th>Order ID</th>
+        <th>User ID</th>   
+        <th>Buyer Name</th>  
+        <th>product Name</th>  
+        <th>Buyer Email</th>  
+        <th>Buyer Phone Number</th>  
+        <th>Buyer address</th>  
+        <th>Order Status</th>  
+        <th>Amount</th>  
+
       </tr>
     </thead>
 
     {
       tableDatas.map((tableData,i) => 
-      <>
-      { i%2==0 ?
+      < >
+      { i%2 == 0 ?
       <tbody>
-      <tr >
+      <tr key={tableData._id}>
+        <th>{i+1}</th>
         <th>{tableData._id}</th>
-        <td>{tableData.buyerName}</td>
+        <td>{tableData.uid}</td>
+        <td>{tableData.name}</td>
         <td>{tableData.productName}</td>
         <td>{tableData.email}</td>
+        <td>{tableData.number}</td>
         <td>{tableData.address}</td>
         <td>{tableData.status}</td>
+        <td>{tableData.quantity?.amount}</td>
       </tr>
-    </tbody> :
-     <tbody>
-     <tr class="hover:bg-slate-200">
+    </tbody>
+     :
+
+     <tbody key={tableData._id}>
+     <tr class="hover:bg-slate-800 bg-black">
+       <th>{i+1}</th>
        <th>{tableData._id}</th>
-       <td>{tableData.buyerName}</td>
+       <td>{tableData.uid}</td>
+       <td>{tableData.name}</td>
        <td>{tableData.productName}</td>
        <td>{tableData.email}</td>
+       <td>{tableData.nummber}</td>
        <td>{tableData.address}</td>
        <td>{tableData.status}</td>
+       <td>{tableData.quantity.amount}</td>
      </tr>
    </tbody> 
     } 

@@ -52,11 +52,16 @@ const ShowProductDetails = () => {
      
             <div>              
               <div className="flex mb-3">
-              <input type="number" defaultValue='20'   class="input mr-3 input-bordered input-accent  w-32  max-w-xs" {...register("amount",  {  min:20 })} />
-              <input  value='Select'  type="submit" class="btn btn-primary modal-button"></input>
+              <input type="number" defaultValue='30'   class="input mr-3 input-bordered input-accent  w-32  max-w-xs" {...register("amount",  {  min:30 })} />
+              {
+                orderAmount == null ?
+                   <input  value='Select'  type="submit" class="btn btn-primary modal-button"></input>
+                   :
+                   <label  for="my-modal-6"   class="btn btn-primary mr-3">Confirm your purchase</label> 
+              }              
               </div>
-              {errors.amount && <p className=" text-red-500">Order minimum 20</p>}
-              <label  for="my-modal-6"   class="btn btn-primary mr-3">Confirm your purchase</label> 
+                  {errors.amount && <p className=" text-red-500">Order minimum 30</p>}
+              
             </div>
 
               

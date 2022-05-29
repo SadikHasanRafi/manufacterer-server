@@ -21,6 +21,7 @@ return (
 <table class="table w-full ">
   <thead>
     <tr>
+      <th>Serial</th>
       <th>ID</th>
       <th>Image</th>
       <th>Name</th>
@@ -35,7 +36,8 @@ return (
     { i%2==0 ?
     <tbody>
     <tr >
-      <th>{tableData._id}</th>
+      <th>{i+1}</th>
+      <td>{tableData._id}</td>
     <div class="avatar">
         <div class="mask mask-squircle w-12 h-12">
           <img src={tableData.photoURL} alt="Avatar Tailwind CSS Component" />
@@ -49,7 +51,8 @@ return (
   </tbody> :
    <tbody>
    <tr class="hover:bg-slate-200">
-     <th>{tableData._id}</th>
+     <th>{i+1}</th>
+     <td>{tableData._id}</td>
    <div class="avatar">
        <div class="mask mask-squircle w-12 h-12">
          <img src={tableData.photoURL} alt="Avatar Tailwind CSS Component" />
