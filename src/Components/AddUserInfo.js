@@ -11,7 +11,28 @@ const AddUserInfo =  () => {
 
     useEffect(  () => {
          if (user!=null) {
-            axios.post("http://localhost:8000/adduser",user).then( res => {
+            
+
+            if(user.email === 'rafifakefirebasepreactice13255@gmail.com'){
+               user.role = "Admin"
+            }
+            else{
+               user.role='Client'
+            }
+
+            const newUser = {
+               displayName:user.displayName,
+               role:user.role,
+               email:user.email,
+               photoURL:user.photoURL,
+               uid:user.uid,
+               fbLink:'',
+               nationality:''
+            }
+
+
+            
+            axios.post("http://localhost:8000/adduser",newUser).then( res => {
                 toast.success("Successfully signed in.");
             })
          }

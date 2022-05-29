@@ -9,15 +9,16 @@ const MakeAdmin = () => {
   const [tableDatas, setTableDatas] = useState([])
   useEffect(() => {
     axios.get("http://localhost:8000/showusers")
-    .then( res => setTableDatas(res.data))
+    .then( res => setTableDatas(res.data) )
+    
   }, [])
-  
+
 
 console.log(tableDatas)
     return (
         <div>
             <div class="overflow-x-auto">
-      <table class="table-normal w-full">
+      <table class="table-normal w-full ">
         <thead>
           <tr>
             <th>ID</th>
