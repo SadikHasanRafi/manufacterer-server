@@ -51,18 +51,23 @@ const ShowProductDetails = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
      
-              <input type="number" defaultValue='20' disabled={data.amount <= 19}  class="input mr-5 input-bordered input-accent  w-32  max-w-xs" {...register("amount",  {  min:20 })} />
-     
+            <div>              
+              <div className="flex mb-3">
+              <input type="number" defaultValue='20'   class="input mr-3 input-bordered input-accent  w-32  max-w-xs" {...register("amount",  {  min:20 })} />
+              <input  value='Select'  type="submit" class="btn btn-primary modal-button"></input>
+              </div>
               {errors.amount && <p className=" text-red-500">Order minimum 20</p>}
+              <label  for="my-modal-6"   class="btn btn-primary mr-3">Confirm your purchase</label> 
+            </div>
 
-                             <input type="submit" class="btn btn-primary modal-button w-32 "  for="buy-modal"/>
-
+              
+              
               
            </form>
             
-
+            {orderAmount && <BuyNowModal orderAmount={orderAmount} singleProduct={singleProduct} ></BuyNowModal>}
               
-             { orderAmount && <BuyNowModal singleProduct={singleProduct} orderAmount={orderAmount} ></BuyNowModal>}
+             
                 
             </div>
           
