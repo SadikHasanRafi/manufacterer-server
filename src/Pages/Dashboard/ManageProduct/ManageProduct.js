@@ -17,38 +17,34 @@ const ManageProduct = () => {
     showProducts()
   }, [])
 
-
-  useEffect(()=>{
-    console.log('kam kaj nai')
-  },[deleteProduct])
-
-
-  const  handleDelete = (i)=> {
-    console.log(i)
+ 
+  const  handleDelete =  (id)=> {
     swal({
       title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this imaginary file!",
+      text: "Once deleted, you will not be able to recover this product item!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
     })
     .then(async (willDelete) => {
       if (willDelete) {
-        swal("Product has been deleted!", {
+
+        await axios.delete(`http://localhost:8000/deleteproduct/${id}`)
+        .then(res=>{
+         console.log(res.data.deletedCount)
+          if (res.data.deletedCount === 1) {
+            showProducts()
+          }
+         })
+
+        swal("Product has been deleted...!", {
           icon: "success",
         });
-        setDeleteProduct(i)
-        console.log("deleting")
-    const data = { _id : deleteProduct }
-    await axios.post("http://localhost:8000/deleteproduct",data)
-    .then(res => {
-      console.log(res)
-      showProducts()
-    })
       } else {
-        swal("Your imaginary file is safe!");
+        swal("Delete failed...!");
       }
     });
+    
   }
 
   return (
@@ -71,25 +67,7 @@ const ManageProduct = () => {
     {
       tableDatas.map((tableData,i) => 
       <>
-      { i%2==0 ?
-      <tbody>
-      <tr >
-        <th>{i+1}</th>
-        <td>{tableData._id}</td>
-      <div class="avatar">
-          <div class="mask mask-squircle w-12 h-12">
-            <img src={tableData.pic} alt="Avatar Tailwind CSS Component" />
-          </div>
-        </div>
-        
-        <td>{tableData.name}</td>
-        <td>{tableData.amount}</td>
-        <td>{tableData.price}</td>
-        <button class="btn btn-outline btn-warning">Update amount</button>
-        <button class="btn btn-outline btn-error ml-20" onClick={() => handleDelete(tableData._id)}>Delete</button>
-      </tr>
-    </tbody>
-    :
+      
      <tbody>
        
      <tr class="hover:bg-slate-200">
@@ -108,7 +86,6 @@ const ManageProduct = () => {
        <button class="btn btn-outline btn-error ml-20" onClick={() => handleDelete(tableData._id)}>Delete</button>
      </tr>
    </tbody> 
-    } 
       </> )
     }
     
