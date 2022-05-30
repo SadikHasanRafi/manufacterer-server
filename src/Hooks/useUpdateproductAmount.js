@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 
+
+
 const useUpdateproductAmount = () => {
+
+    let newData = 0
+    let oldData = 0
+    let updatedData = 0
+
     //accepted value is only + or -
     const [sign,setSign] = useState('') 
 
@@ -14,16 +21,27 @@ const useUpdateproductAmount = () => {
 
 
     //after the calculation latest data will be store here
-    const [latestData,setLatestData] = useState({}) 
+    const [latestData,setLatestData] = useState(null) 
 
 
     
 
     if (sign == '+'){
-        console.log(sign,currentData,updateAmount)
+        newData = parseInt(updateAmount.updateAmount)
+        oldData = parseInt(currentData.amount)
+        updatedData = oldData + newData
+        currentData.amount = updatedData
+        setLatestData(currentData.amount)
+        console.log(currentData.amount)
+       
     }
     else if (sign == '-'){
-        console.log(sign,currentData,updateAmount)  
+        newData = parseInt(updateAmount.updateAmount)
+        oldData = parseInt(currentData.amount)
+        updatedData = oldData - newData
+        currentData.amount = updatedData
+        setLatestData(currentData.amount)
+        console.log(currentData.amount)
     }
 
     return {setSign,setCurrentData,setUpdateAmount,latestData}

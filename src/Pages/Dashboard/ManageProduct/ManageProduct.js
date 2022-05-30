@@ -4,10 +4,11 @@ import swal from 'sweetalert';
 import { useForm } from "react-hook-form";
 import useUpdateproductAmount from '../../../Hooks/useUpdateproductAmount';
 
+
 const ManageProduct = () => {
  
  
-  
+
 
   const showProducts =async () => {
     await axios.get("http://localhost:8000/showproducts")
@@ -73,24 +74,29 @@ const [dataForUpdate,setDataForUpdate] = useState({})  // here the data is store
 
 const {setSign,setCurrentData,setUpdateAmount,latestData} = useUpdateproductAmount()
 
-useEffect(()=>{
-  setSign(operationSign)
-  setCurrentData(dataForUpdate)
-  setUpdateAmount(useUpdateAmount)
-},[handleDecreasing ])
 
+console.log(latestData)
 
 useEffect(()=>{
   setSign(operationSign)
   setCurrentData(dataForUpdate)
   setUpdateAmount(useUpdateAmount)
-},[handleIncreaseing ])
+},[handleDecreasing])
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+useEffect(()=>{
+  setSign(operationSign)
+  setCurrentData(dataForUpdate)
+  setUpdateAmount(useUpdateAmount)
+},[handleIncreaseing])
+
+  const { register, handleSubmit,reset, watch, formState: { errors } } = useForm();
   const onSubmit = data =>{ 
     setUpdatedAmount(data)
     console.log('data',data)
+    reset()
   };
+
 
   return (
     <div>
@@ -152,7 +158,7 @@ useEffect(()=>{
                   <span class="label-text">Enter the amount</span>
                 </label>
 
-                <input type="number" defaultValue='' placeholder='Enter the amount' class="input input-bordered w-full max-w-xs" required {...register("updateAmount",{min:1})} />
+                <input type="number" id='amount-form' placeholder='Enter the amount' class="input input-bordered w-full max-w-xs" required {...register("updateAmount",{min:1})} />
                 {errors.updateAmount && <span className=' text-red-700'>Amount must be more than 1</span>}
 
                 <div className='flex justify-end gap-5'>
