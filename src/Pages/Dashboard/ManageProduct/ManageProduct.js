@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import swal from 'sweetalert';
 import { useForm } from "react-hook-form";
+import useUpdateproductAmount from '../../../Hooks/useUpdateproductAmount';
 
 const ManageProduct = () => {
  
@@ -49,35 +50,46 @@ const ManageProduct = () => {
   }
 
 
+const [operationSign, setOperationSign] = useState('') // here is the operation sign .....add or subtract 
 
+const [useUpdateAmount,setUpdatedAmount] = useState(0) //here is the amount that will be increase or decrease 
 
-const [useUpdateAmount,setUpdatedAmount] = useState(0)
-
-const [dataForUpdate,setDataForUpdate] = useState({})
+const [dataForUpdate,setDataForUpdate] = useState({})  // here the data is stored which going to be updated
   const handleUpate = (targetData) =>{
     //target data has the value that are going to be updated
     console.log(targetData)
     setDataForUpdate(targetData)
-    let increasedValue = parseInt(useUpdateAmount.updateAmount)
-
   }
 
  const handleIncreaseing = (operationName) => {
-   
+   console.log(operationName)
+   setOperationSign(operationName)
  }
  const handleDecreasing = (operationName) => {
-
+  console.log(operationName)
+  setOperationSign(operationName)
  }
 
 
+const {setSign,setCurrentData,setUpdateAmount,latestData} = useUpdateproductAmount()
+
+useEffect(()=>{
+  setSign(operationSign)
+  setCurrentData(dataForUpdate)
+  setUpdateAmount(useUpdateAmount)
+},[handleDecreasing ])
 
 
-
+useEffect(()=>{
+  setSign(operationSign)
+  setCurrentData(dataForUpdate)
+  setUpdateAmount(useUpdateAmount)
+},[handleIncreaseing ])
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data =>{ 
     setUpdatedAmount(data)
-    
+    console.log('data',data)
   };
 
   return (
@@ -111,7 +123,6 @@ const [dataForUpdate,setDataForUpdate] = useState({})
            <img src={tableData.pic} alt="Avatar Tailwind CSS Component" />
          </div>
        </div>
-       
        <td>{tableData.name}</td>
        <td>{tableData.amount}</td>
        <td>{tableData.price}</td>
@@ -151,8 +162,8 @@ const [dataForUpdate,setDataForUpdate] = useState({})
 
                   <div class="modal-action">
 
-                    <input type="submit" value='Increase' class=" btn bg-primary disabled:bg-slate-300 hover:bg-accent hover:text-neutral text-neutral" onClick={() => handleIncreaseing('add')} for="my-modal-6" />
-                    <input type="submit" value='Decrease' class=" btn bg-primary disabled:bg-slate-300 hover:bg-accent hover:text-neutral text-neutral" onClick={() => handleDecreasing('subtract')} for="my-modal-6" />
+                    <input type="submit" value='Increase' class=" btn bg-primary disabled:bg-slate-300 hover:bg-green-600 hover:text-neutral text-neutral" onClick={() => handleIncreaseing('+')} for="my-modal-6" />
+                    <input type="submit" value='Decrease' class=" btn bg-primary disabled:bg-slate-300 hover:bg-red-600 hover:text-neutral text-neutral" onClick={() => handleDecreasing('-')} for="my-modal-6" />
 
                   </div>
                  </div>
