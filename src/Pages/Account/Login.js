@@ -42,18 +42,18 @@ const Login = () => {
     <div>
     { (loading || newUserLoading || previousUserLoading) && <Loading></Loading> }
       <div className="hero h-[80vh] sm:h-[100vh]">
-      <div class="card flex-shrink-0 border border-[#9b5de5] w-full max-w-sm bg-base-100">
-        <div class="card-body">
+      <div className="card flex-shrink-0 border border-[#9b5de5] w-full max-w-sm bg-base-100">
+        <div className="card-body">
           <h1 className="text-2xl text-center pb-5">Login</h1>
 
 
           {/* email password base login */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            class="form-control w-full max-w-xs"
+            className="form-control w-full max-w-xs"
           >
-            <label class="label">
-              <span class="label-text">Email</span>
+            <label className="label">
+              <span className="label-text">Email</span>
             </label>
             {/* email input */}
             <input
@@ -61,31 +61,31 @@ const Login = () => {
               type="email"
               placeholder="email"
               {...register("email", { required: true })}
-              class="input input-bordered input-accent w-full max-w-xs "
+              className="input input-bordered input-accent w-full max-w-xs "
             />
             {errors.email && <span>This field is required</span>}
  
-            <label class="label">
-              <span class="label-text">Password</span>
+            <label className="label">
+              <span className="label-text">Password</span>
             </label>
             <input
               defaultValue=""
               type="password"
               placeholder="password"
               {...register("password", { required: true })}
-              class="input input-bordered input-accent w-full max-w-xs"
+              className="input input-bordered input-accent w-full max-w-xs"
             />
             {errors.password && <span>This field is required</span>}
    
    
 
 
-            <label class="label">
+            <label className="label">
               <p>
                 New user?
                 <Link
                   to="/signup"
-                  class="label-text-alt link link-hover text-secondary"
+                  className="label-text-alt link link-hover text-secondary"
                 >
                   Create a new account
                 </Link>
@@ -93,18 +93,18 @@ const Login = () => {
             </label>
 
           {/* submit button */}
-            <input type="submit" value="Submit" class="btn  " />
+            <input type="submit" value="Submit" className="btn  " />
           </form>
           {/* ________________________________ */}
           
           
           
-          <div class="divider">OR</div>
+          <div className="divider">OR</div>
 
 
 
           {/* google sign in  */}
-          <input type="submit" onClick={handleGoogleSignIn} value="Sign in with google" class="btn" />
+          <input type="submit" onClick={handleGoogleSignIn} value="Sign in with google" className="btn" />
           {/* ________________________________ */}
 
 

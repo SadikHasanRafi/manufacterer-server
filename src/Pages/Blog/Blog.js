@@ -4,8 +4,8 @@ const Blog = () => {
   return (
     <div className="flex justify-center my-20">
       <div className="  gap-4 grid grid-cols-1 sm:grid-cols-3 sm:gap-24 mx-7 sm:mx-60">
-        <div class=" mockup-code shadow-2xl bg-secondary pb-0">
-          <div class="card-body rounded-botom-xl bg-info  break-words ">
+        <div className=" mockup-code shadow-2xl bg-secondary pb-0">
+          <div className="card-body rounded-botom-xl bg-info  break-words ">
             <code className=" text-cyan-100">
               <span className=" text-lg font-bold"> $ </span>How will you improve the performance of a React Application?</code>
             <code className="text-green-400">
@@ -13,8 +13,8 @@ const Blog = () => {
           </div>
         </div>
 
-        <div class=" mockup-code shadow-2xl bg-secondary pb-0">
-          <div class="card-body rounded-botom-xl bg-info  break-words ">
+        <div className=" mockup-code shadow-2xl bg-secondary pb-0">
+          <div className="card-body rounded-botom-xl bg-info  break-words ">
             <code className=" text-cyan-100">
               <span className=" text-lg font-bold"> $ </span>What are the different ways to manage a state in a React application?</code>
             <code className="text-green-400">
@@ -22,8 +22,8 @@ const Blog = () => {
           </div>
         </div>
 
-        <div class=" mockup-code shadow-2xl bg-secondary pb-0">
-          <div class="card-body rounded-botom-xl bg-info  break-words ">
+        <div className=" mockup-code shadow-2xl bg-secondary pb-0">
+          <div className="card-body rounded-botom-xl bg-info  break-words ">
             <code className=" text-cyan-100">
               <span className=" text-lg font-bold"> $ </span>How does prototypical inheritance work?</code>
             <code className="text-green-400">
@@ -31,8 +31,8 @@ const Blog = () => {
           </div>
         </div>
 
-        <div class=" mockup-code shadow-2xl bg-secondary pb-0">
-          <div class="card-body rounded-botom-xl bg-info  break-words ">
+        <div className=" mockup-code shadow-2xl bg-secondary pb-0">
+          <div className="card-body rounded-botom-xl bg-info  break-words ">
             <code className=" text-cyan-100">
               <span className=" text-lg font-bold"> $ </span>Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts</code>
             <code className="text-green-400">
@@ -40,8 +40,8 @@ const Blog = () => {
           </div>
         </div>
 
-        <div class=" mockup-code shadow-2xl bg-secondary pb-0">
-          <div class="card-body rounded-botom-xl bg-info  break-words ">
+        <div className=" mockup-code shadow-2xl bg-secondary pb-0">
+          <div className="card-body rounded-botom-xl bg-info  break-words ">
             <code className=" text-cyan-100">
               <span className=" text-lg font-bold"> $ </span>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</code>
             <code className="text-green-400">
@@ -49,8 +49,8 @@ const Blog = () => {
           </div>
         </div>
 
-        <div class=" mockup-code shadow-2xl bg-secondary pb-0">
-          <div class="card-body rounded-botom-xl bg-info  break-words ">
+        <div className=" mockup-code shadow-2xl bg-secondary pb-0">
+          <div className="card-body rounded-botom-xl bg-info  break-words ">
             <code className=" text-cyan-100">
               <span className=" text-lg font-bold"> $ </span>What is a unit test? Why should write unit tests?</code>
             <code className="text-green-400">

@@ -7,7 +7,7 @@ const ManageAllOrder = () => {
   const [tableDatas, setTableDatas] = useState([] || {})
   useEffect(() => {
     
-    axios.get("http://localhost:8000/showorders")
+    axios.get("https://glacial-tundra-61856.herokuapp.com/showorders")
     .then( res => setTableDatas(res.data) )
 
     console.log(tableDatas.number)
@@ -20,8 +20,8 @@ const ManageAllOrder = () => {
 
   return (
     <div>
-        <div class="overflow-x-auto">
-  <table class="table w-full ">
+        <div className="overflow-x-auto">
+  <table className="table w-full ">
     <thead>
       <tr>
         <th>Serial</th>
@@ -59,7 +59,7 @@ const ManageAllOrder = () => {
      :
 
      <tbody key={tableData._id}>
-     <tr class="hover:bg-slate-800 bg-black">
+     <tr className="hover:bg-slate-800 bg-black">
        <th>{i+1}</th>
        <th>{tableData._id}</th>
        <td>{tableData.uid}</td>

@@ -16,7 +16,7 @@ const ShowProductDetails = () => {
 
 
   useEffect(()=>{
-    axios.get(`http://localhost:8000/showproductdetails/${id._id}`)
+    axios.get(`https://glacial-tundra-61856.herokuapp.com/showproductdetails/${id._id}`)
     .then(res => setSingleProduct(res.data))
   },[])
 
@@ -28,15 +28,15 @@ const ShowProductDetails = () => {
     const {amount,description,name,pic,price} = singleProduct || {}
   return (
     <div>
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row">
           <img
             srcSet={pic}
-            class="max-w-sm rounded-lg shadow-2xl"
+            className="max-w-sm rounded-lg shadow-2xl"
           />
           <div>
-            <h1 class="text-5xl font-bold">{name}</h1>
-            <p class="py-6">
+            <h1 className="text-5xl font-bold">{name}</h1>
+            <p className="py-6">
               {description}
             </p>
 
@@ -52,12 +52,12 @@ const ShowProductDetails = () => {
      
             <div>              
               <div className="flex mb-3">
-              <input type="number" defaultValue='30'   class="input mr-3 input-bordered input-accent  w-32  max-w-xs" {...register("amount",  {  min:30 })} />
+              <input type="number" defaultValue='30'   className="input mr-3 input-bordered input-accent  w-32  max-w-xs" {...register("amount",  {  min:30 })} />
               {
                 orderAmount == null ?
-                   <input  value='Select'  type="submit" class="btn btn-primary modal-button"></input>
+                   <input  value='Select'  type="submit" className="btn btn-primary modal-button"></input>
                    :
-                   <label  for="my-modal-6"   class="btn btn-primary mr-3">Confirm your purchase</label> 
+                   <label  for="my-modal-6"   className="btn btn-primary mr-3">Confirm your purchase</label> 
               }              
               </div>
                   {errors.amount && <p className=" text-red-500">Order minimum 30</p>}

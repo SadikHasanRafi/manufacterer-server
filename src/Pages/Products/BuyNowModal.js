@@ -29,7 +29,7 @@ const BuyNowModal = (props) => {
       name:user.displayName,
       productName:name
     }
-    await axios.post(' http://localhost:8000/addorder',orderData)
+    await axios.post(' https://glacial-tundra-61856.herokuapp.com/addorder',orderData)
     .then(res => {
       if (res?.data.success === true) {
         toast.success("Soon your order will be delivered.");
@@ -47,12 +47,12 @@ const BuyNowModal = (props) => {
     <div className=" mb-2 z-50  absolute">
       {/* modal section */}
 
-      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <label
             for="my-modal-6"
-            class="btn btn-sm btn-circle absolute right-2 top-2 bg-red-200 hover:border-0 hover:bg-red-500"
+            className="btn btn-sm btn-circle absolute right-2 top-2 bg-red-200 hover:border-0 hover:bg-red-500"
           >
             ✕
           </label>
@@ -65,7 +65,7 @@ const BuyNowModal = (props) => {
                 placeholder="Name"
                 disabled
                 value={user.displayName}
-                class=" w-[70vw] input input-bordered input-secondary w-full max-w-xs"
+                className=" w-[70vw] input input-bordered input-secondary w-full max-w-xs"
                 type="text"
                 {...register("name")}
               />
@@ -76,7 +76,7 @@ const BuyNowModal = (props) => {
                   placeholder="Email"
                   disabled
                   value={user.email}
-                  class="w-[70vw] input input-bordered input-secondary w-full max-w-xs"
+                  className="w-[70vw] input input-bordered input-secondary w-full max-w-xs"
                   type="text"
                   {...register("email")}
                 />
@@ -85,7 +85,7 @@ const BuyNowModal = (props) => {
               <label>Address</label>
               <input
                 placeholder="Address"
-                class="w-[70vw] input input-bordered input-secondary w-full max-w-xs"
+                className="w-[70vw] input input-bordered input-secondary w-full max-w-xs"
                 {...register("address", { required: true})}
               />
             </div>
@@ -94,7 +94,7 @@ const BuyNowModal = (props) => {
               <label>Mobile number</label>
               <input
                 placeholder="Phone number"
-                class="w-[70vw] input input-bordered input-secondary w-full max-w-xs"
+                className="w-[70vw] input input-bordered input-secondary w-full max-w-xs"
                 type="number"
                 {...register("number", {
                   required: true,
@@ -105,7 +105,7 @@ const BuyNowModal = (props) => {
             </div>
             <div className="flex items-center gap-8">   
 
-            <div class="modal-action ">
+            <div className="modal-action ">
               { orderDetails ? <input  className="btn hover:bg-green-200 hover:border-0" type="submit" value="Proced to cash on delivery" /> : <></>}
             </div>
 

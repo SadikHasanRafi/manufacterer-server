@@ -14,7 +14,7 @@ const AddReview = () => {
     setReview(data);
     console.log(data)
 
-    await axios.post("http://localhost:8000/addreview", data).then((res) => {
+    await axios.post("https://glacial-tundra-61856.herokuapp.com/addreview", data).then((res) => {
       console.log(res?.data.success);
       if (res?.data.success === true) {
         toast.success("Review successfully added.");
@@ -30,17 +30,17 @@ const AddReview = () => {
           cols="30"
           defaultValue={review}
           {...register("review", { required: true })}
-          class="textarea textarea-secondary"
+          className="textarea textarea-secondary"
           placeholder="Review"
         ></textarea>
 
-        <div class="rating gap-10 m-5">
+        <div className="rating gap-10 m-5">
           <input
             type="radio"
             value="1"
             {...register("rating")}
             name="rating"
-            class="mask mask-star bg-yellow-400"
+            className="mask mask-star bg-yellow-400"
             defaultValue={review}
           />
           <input
@@ -48,7 +48,7 @@ const AddReview = () => {
             value="2"
             {...register("rating")}
             name="rating"
-            class="mask mask-star bg-yellow-400"
+            className="mask mask-star bg-yellow-400"
             defaultValue={review}
           />
           <input
@@ -56,7 +56,7 @@ const AddReview = () => {
             value="3"
             {...register("rating")}
             name="rating"
-            class="mask mask-star bg-yellow-400"
+            className="mask mask-star bg-yellow-400"
             defaultValue={review}
           />
           <input
@@ -64,7 +64,7 @@ const AddReview = () => {
             value="4"
             {...register("rating")}
             name="rating"
-            class="mask mask-star bg-yellow-400"
+            className="mask mask-star bg-yellow-400"
             defaultValue={review}
           />
           <input
@@ -72,12 +72,12 @@ const AddReview = () => {
             value="5"
             {...register("rating")}
             name="rating"
-            class="mask mask-star bg-yellow-400"
+            className="mask mask-star bg-yellow-400"
             defaultValue={review}
           />
         </div>
 
-        <input class="btn btn-outline btn-success my-2" type="submit" />
+        <input className="btn btn-outline btn-success my-2" type="submit" />
         <Toaster />
       </form>
     </div>

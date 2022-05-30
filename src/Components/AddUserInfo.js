@@ -31,7 +31,7 @@ const AddUserInfo =  () => {
             }
 
             
-            axios.put(`http://localhost:8000/addoneuser`,newUser)
+            axios.put(`https://glacial-tundra-61856.herokuapp.com/addoneuser`,newUser)
             .then( res =>{ 
                console.log(res.data) 
                toast.success("Successfully signed in."); 

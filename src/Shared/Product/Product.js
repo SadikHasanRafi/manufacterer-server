@@ -6,18 +6,18 @@ const Product = (product) => {
     return (
         <div>
           <Link to={`/product/${_id}`}>
-            <div class="card w-96 bg-base-100 shadow-md hover:shadow-2xl">
+            <div className="card w-96 bg-base-100 shadow-md hover:shadow-2xl">
           <figure>
             <img
               srcSet={pic}
               alt="Shoes"
             />
           </figure>
-          <div class="card-body">
-            <h2 class="card-title">{name}</h2>
+          <div className="card-body">
+            <h2 className="card-title">{name}</h2>
             <p>{description}</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary"> <p className="text-xl">Buy Now <span >${price}</span></p>/<sub> piece</sub> </button>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary"> <p className="text-xl">Buy Now <span >${price}</span></p>/<sub> piece</sub> </button>
             </div>
           </div>
         </div>

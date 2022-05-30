@@ -8,7 +8,7 @@ const MakeAdmin = () => {
  
   const [tableDatas, setTableDatas] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:8000/showusers")
+    axios.get("https://glacial-tundra-61856.herokuapp.com/showusers")
     .then( res => setTableDatas(res.data) )
     
   }, [])
@@ -17,8 +17,8 @@ const MakeAdmin = () => {
 console.log(tableDatas)
 return (
   <div>
-      <div class="overflow-x-auto">
-<table class="table w-full ">
+      <div className="overflow-x-auto">
+<table className="table w-full ">
   <thead>
     <tr>
       <th>Serial</th>
@@ -38,8 +38,8 @@ return (
     <tr >
       <th>{i+1}</th>
       <td>{tableData._id}</td>
-    <div class="avatar">
-        <div class="mask mask-squircle w-12 h-12">
+    <div className="avatar">
+        <div className="mask mask-squircle w-12 h-12">
           <img src={tableData.photoURL} alt="Avatar Tailwind CSS Component" />
         </div>
       </div>
@@ -50,11 +50,11 @@ return (
     </tr>
   </tbody> :
    <tbody>
-   <tr class="hover:bg-slate-200">
+   <tr className="hover:bg-slate-200">
      <th>{i+1}</th>
      <td>{tableData._id}</td>
-   <div class="avatar">
-       <div class="mask mask-squircle w-12 h-12">
+   <div className="avatar">
+       <div className="mask mask-squircle w-12 h-12">
          <img src={tableData.photoURL} alt="Avatar Tailwind CSS Component" />
        </div>
      </div>

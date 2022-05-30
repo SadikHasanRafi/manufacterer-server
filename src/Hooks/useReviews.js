@@ -6,7 +6,7 @@ const useReviews = () => {
     // Fetching data
     useEffect(()=>{
     
-        axios.get("http://localhost:8000/showreviews")
+        axios.get("https://glacial-tundra-61856.herokuapp.com/showreviews")
         .then(res => {
             setReviews(res.data)
             

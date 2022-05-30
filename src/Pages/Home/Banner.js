@@ -6,7 +6,7 @@ const Banner = () => {
   const [products, setProducts] = useState([])
 
   useEffect(()=>{ 
-    axios.get("http://localhost:8000/showproducts")
+    axios.get("https://glacial-tundra-61856.herokuapp.com/showproducts")
     .then(res => {
         setProducts(res.data)
     })
@@ -14,17 +14,18 @@ const Banner = () => {
 },[])
 
 
-  console.log(products[products.length-1].pic)
+  const product = products[products.length-1].pic
+  const {pic,name,description} = product
 
 
     return (
-      <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content flex-col lg:flex-row">
-        <img src={products[products.length-1]?.pic} class="max-w-sm rounded-lg shadow-2xl" />
+      <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row">
+        <img src={pic} className="max-w-sm rounded-lg shadow-2xl" />
         <div>
-          <h1 class="text-5xl font-bold">{products[products.length-1]?.name}</h1>
-          <p class="py-6">{products[products.length-1]?.description}</p>
-          <Link to='/product'><button class="btn btn-primary">Buy Now</button></Link>
+          <h1 className="text-5xl font-bold">{name}</h1>
+          <p className="py-6">{description}</p>
+          <Link to='/product'><button className="btn btn-primary">Buy Now</button></Link>
         </div>
       </div>
     </div>

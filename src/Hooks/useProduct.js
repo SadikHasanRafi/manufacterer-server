@@ -8,7 +8,7 @@ const useProducts = () => {
     // Fetching data
     useEffect(()=>{
     
-        axios.get("http://localhost:8000/showproducts")
+        axios.get("https://glacial-tundra-61856.herokuapp.com/showproducts")
         .then(res => {
             setProducts(res.data)
         })

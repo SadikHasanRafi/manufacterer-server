@@ -37,13 +37,13 @@ const Header = () => {
   );
 
   return (
-    <div class="navbar bg-base-100 justify-center">
-      <div class="justify-start w-6/12">
-        <div class="dropdown">
-          <label tabIndex="0" class="btn btn-ghost lg:hidden">
+    <div className="navbar bg-base-100 justify-center">
+      <div className="justify-start w-6/12">
+        <div className="dropdown">
+          <label tabIndex="0" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -58,25 +58,25 @@ const Header = () => {
           </label>
           <ul
             tabIndex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {menuItem}
           </ul>
         </div>
-        <Link to='/'><a class=" hover:shadow-sm  hidden lg:flex text-2xl">Laptop Accessories LTD.</a></Link>
+        <Link to='/'><a className=" hover:shadow-sm  hidden lg:flex text-2xl">Laptop Accessories LTD.</a></Link>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-4">{menuItem}</ul>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal p-4">{menuItem}</ul>
       </div>
 
       <div className=" gap-0">
-        <div class="navbar-end">
+        <div className="navbar-end">
          {
-           !user &&  <NavLink to="login"><a class="btn">Login</a></NavLink>
+           !user &&  <NavLink to="login"><a className="btn">Login</a></NavLink>
          }
         </div>
 
-        <div class="dropdown  dropdown-end">
+        <div className="dropdown  dropdown-end">
           {
             user && <UserImg></UserImg>
           }
@@ -84,15 +84,15 @@ const Header = () => {
 
           <ul
             tabIndex="0"
-            class="dropdown-content  menu p-2  bg-base-100 rounded-box w-52"
+            className="dropdown-content  menu p-2  bg-base-100 rounded-box w-52"
           >
             
-            <Link to='/'><li>{ user && <button class="btn shadow btn-outline btn-secondary" onClick={handleSignOut}>Sign Out</button>}</li></Link>
+            <Link to='/'><li>{ user && <button className="btn shadow btn-outline btn-secondary" onClick={handleSignOut}>Sign Out</button>}</li></Link>
           </ul>
         </div>
       </div>
       <div className="navbar-end lg:hidden">
-      <label htmlFor="dashboard-sidebar" class="btn btn-primary drawer-button lg:hidden mx-2">Open Dashboard</label>
+      <label htmlFor="dashboard-sidebar" className="btn btn-primary drawer-button lg:hidden mx-2">Open Dashboard</label>
       </div>
       <Toaster />
        <AddUserInfo></AddUserInfo> 

@@ -45,7 +45,7 @@ const MyProfile = () => {
             type="text"
             placeholder="Type here"
             name="nation"
-            class="input input-bordered input-secondary w-full max-w-xs"
+            className="input input-bordered input-secondary w-full max-w-xs"
           />
         </div>
         <div className="my-5">
@@ -54,10 +54,10 @@ const MyProfile = () => {
             type="text"
             name="id"
             placeholder="Type here"
-            class="input input-bordered input-secondary w-full max-w-xs"
+            className="input input-bordered input-secondary w-full max-w-xs"
           />
         </div>
-        <button class="btn btn-outline btn-ghost w-full">Button</button>
+        <button className="btn btn-outline btn-ghost w-full">Button</button>
         </div>
       </div>
     </div>
