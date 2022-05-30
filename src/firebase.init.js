@@ -11,9 +11,6 @@ const firebaseConfig = {
   // messagingSenderId: "609999137237",
   // appId: "1:609999137237:web:af05622792d1868715b55c"
   
-
-
-
   apiKey : process.env.REACT_APP_apiKey,
   authDomain : process.env.REACT_APP_authDomain,
   projectId : process.env.REACT_APP_projectId,
