@@ -14,7 +14,7 @@ const AllComp = () => {
   const product = products.slice(1, 4 )
   return (
     <div>
-      {/* <Banner></Banner> */}
+      <Banner></Banner>
       <BusinessSummary></BusinessSummary>
       <div className="flex flex-cols justify-center justify-evenly">
 
